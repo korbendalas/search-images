@@ -1,16 +1,20 @@
 import React from 'react';
+import ImageCard from './ImageCard';
+import './ImageList.css';
+
+
 
 const ImageList=(props)=>{
  console.log(props.images);
 
-//array                        a moze i {description, id, urls} - destructuring
-const images = props.images.map((item)=>{
+//array                        
+const images = props.images.map((image)=>{
 
-    return <img alt={item.description} key={item.id} src={item.urls.regular}/>
+    return <ImageCard  key={image.id} image={image} />
 })
     return (
 
-    <div>{images} </div>
+    <div className="image-list">{images} </div>
     
     );
 };
